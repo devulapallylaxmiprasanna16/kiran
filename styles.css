@@ -1,0 +1,105 @@
+/* Countdown Styling */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffcccc;
+    font-size: 4rem;
+    color: #ff6699;
+    font-family: 'Cursive', sans-serif;
+}
+
+.count-number {
+    animation: countdown 1s linear infinite;
+}
+
+/* Loading Screen Styling */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    font-size: 2rem;
+    color: #ff6699;
+    font-family: 'Cursive', sans-serif;
+}
+
+/* Floating Hearts Background */
+.heart-background {
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    opacity: 0.8;
+    transform: rotate(45deg);
+    animation: float 5s linear infinite;
+    border-radius: 50% 50% 0 0;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0); opacity: 0.9; }
+    50% { transform: translate(50px, -50px); opacity: 0.5; }
+    100% { transform: translate(0, 0); opacity: 0.9; }
+}
+
+.thread-container {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.thread {
+    background-color: #ff6699;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.love-message {
+    display: none;
+    font-size: 1.5rem;
+    color: #ff6699;
+    font-family: 'Cursive', sans-serif;
+}
+
+@keyframes countdown {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
